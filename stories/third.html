@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oqo4eto.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <title>THE UGLY DUCKLING</title>
+    <style>
+      html {
+        background-color: #e8f6fc;
+      }
+      h2 {
+        font-family: "Dancing Script", Cursive;
+        color: black;
+      }
+      h3 {
+        color:#6875cc ;
+      }
+      p {
+        color: black;
+        line-height:1.7 ;
+      }
+      .container {
+    text-align: center;
+}
+
+.question {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+}
+
+button {
+    background-color: #6875cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #6875cc;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+    </style>
+  </head>
+  <body class="stories">
+    <h2 class="story-title">THE UGLY DUCKLING</h2>
+    <h3 class="author">© Stella Wei</h3>
+    <p>
+      Once upon a time, on a farm by a peaceful pond, a mother duck waited eagerly for her eggs to hatch. One by one, the eggs cracked open, and fluffy ducklings emerged, except for one. The last egg was larger than the others, and when it finally hatched, the mother duck was surprised to see a strange-looking duckling. Unlike the others, this duckling was big and gray, and everyone called him ugly.
+    </p>
+
+    <img class="center-img" src="https://www.dexign.ro/images/cortina/ratusca-cea-urata-1.jpg" />
+
+    <p>
+      The ugly duckling tried to fit in with his siblings, but they teased and mocked him for being different. Feeling sad and lonely, the ugly duckling wandered away from the pond, hoping to find a place where he belonged. Throughout his journey, the ugly duckling encountered other animals who also rejected him because of his appearance. He faced many challenges and hardships, but he never lost hope. As the seasons changed, the ugly duckling grew bigger and stronger. </p>
+    <p>
+      One day, he saw a beautiful flock of swans gliding gracefully on a nearby lake. He wished he could be like them. To his surprise, the other swans welcomed him with open wings, embracing him as one of their own. The ugly duckling looked at his reflection in the water and realized he was no longer ugly. He had transformed into a magnificent swan. Now, the ugly duckling lived happily ever after, surrounded by friends who loved and accepted him for who he was.Pre reading activities for primary school children
+    </p>
+
+    <div class="container">
+      <h1>Questions</h1>
+      <h3>Let’s answer True/False questions</h3>
+      <form id="quizForm">
+          <div class="question">
+              <p>1. The story takes place on a farm by a peaceful pond.</p>
+              <label><input type="radio" name="q1" value="true"> True</label>
+              <label><input type="radio" name="q1" value="false"> False</label>
+          </div>
+          <div class="question">
+              <p>2. True/False: All of the ducklings that hatch from the eggs are identical to each other.</p>
+              <label><input type="radio" name="q2" value="true"> True</label>
+              <label><input type="radio" name="q2" value="false"> False</label>
+          </div>
+          <div class="question">
+              <p>3. True/False: The other ducklings tease and mock the ugly duckling because they think he is beautiful.</p>
+              <label><input type="radio" name="q3" value="true"> True</label>
+              <label><input type="radio" name="q3" value="false"> False</label>
+          </div>
+          <div class="question">
+              <p>4. True/False: The ugly duckling wanders away from the pond because he is feeling happy and accepted.</p>
+              <label><input type="radio" name="q4" value="true"> True</label>
+              <label><input type="radio" name="q4" value="false"> False</label>
+          </div>
+          <div class="question">
+              <p>5. True/False: Throughout his journey, the ugly duckling faces challenges and hardships.</p>
+              <label><input type="radio" name="q5" value="true"> True</label>
+              <label><input type="radio" name="q5" value="false"> False</label>
+          </div>
+          <button type="button" onclick="checkAnswers()">Check</button>
+          <a href="../index.html"> <h3>Return.</h3></a>
+      </form>
+      <div id="result"></div>
+  </div>
+    <script>
+      function checkAnswers() {
+    const form = document.getElementById('quizForm');
+    const result = document.getElementById('result');
+    let score = 0;
+
+    const answers = {
+        q1: 'true',
+        q2: 'false',
+        q3: 'false',
+        q4: 'false',
+        q5: 'true'
+    };
+
+    for (const [question, correctAnswer] of Object.entries(answers)) {
+        const userAnswer = form.elements[question].value;
+        if (userAnswer === correctAnswer) {
+            score++;
+        }
+    }
+
+    result.textContent = `You got ${score} out of ${Object.keys(answers).length} correct.`;
+}
+    </script>
+  </body>
+</html>

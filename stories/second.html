@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oqo4eto.css" />
+    <title>THE FRIENDLY BEAR</title>
+<style>
+      html {
+        color: black;
+        background: #526d4c;
+      }
+      h2 {
+        font-style: underline;
+        font-family: "times new roman";
+          color: #e4e4e4 ;
+      }
+      h3 {
+        color: #e4e4e4;
+      }
+      p {
+        color: #e4e4e4 ;
+        line-height: 1.5;
+        font-family: "times new roman";
+        font-size: 20px;
+      }
+      .container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.matching-game {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.terms, .definitions {
+    width: 40%;
+}
+
+.terms p, .definitions div {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.terms p {
+    cursor: grab;
+}
+
+.definitions {
+    display: flex;
+    flex-direction: column;
+}
+
+.definition {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+button {
+    background-color: #6fcc68;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #6fcc68;
+}
+    </style>
+  </head>
+  <body class="stories">
+    <h2 class="story-title"><i>THE FRIENDLY BEAR</i></h2>
+    <h3 class="author">© Maya Stravinskaya</h3>
+    <img class="center-img" src="Рисунок2.jpg" height="500px"/>
+    <p>
+      The Friendly Bear Once upon a time, in a beautiful forest, there lived a friendly bear named Benny. Benny was big and cuddly, with soft fur as brown as chocolate. He loved to roam the forest, playing with his animal friends and searching for honey. One sunny day, while Benny was exploring, he came across a group of animals huddled together, looking scared. They told Benny that a fierce dragon had moved into the forest and was scaring everyone away. 
+    </p>
+    <p>
+      Benny knew he had to do something to help his friends. He bravely marched to the dragon's cave and found the dragon sitting outside, breathing fire and growling. 
+    </p>
+    
+      <p>
+        -"Hello, Mr. Dragon," Benny said politely. 
+    </p>
+  
+    <p>
+      -"I'm Benny the bear, and I've heard you've been scaring my friends. Why are you doing that?" 
+    </p>
+  
+    <p>The dragon looked surprised. </p>
+  
+    <p>
+      -"I... I'm sorry," he stuttered. "I didn't mean to scare anyone. I'm just trying to protect my home." 
+    </p>
+  
+    <p>
+      Benny listened kindly to the dragon's story. He learned that the dragon was lonely and afraid, and he didn't have any friends.
+    </p>
+  
+    <p>
+      -"I understand," Benny said with a smile.
+    </p>
+  
+    <p>
+      -"But scaring others isn't the way to make friends. How about this? Instead of scaring them, why don't you come and play with us? We could use a big, strong dragon like you to help us build treehouses and explore the forest." 
+    </p>
+    <p>
+      The dragon's eyes lit up with excitement. 
+    </p>
+    <p>
+      -"Really? You'd let me play with you?" 
+-"Of course!" Benny replied warmly. 
+-"Everyone is welcome in our forest."
+The dragon's eyes lit up with excitement. 
+-"Really? You'd let me play with you?" 
+-"Of course!" Benny replied warmly. 
+-"Everyone is welcome in our forest." 
+
+    </p>
+    <p>
+      From that day on, Benny and the dragon became the best of friends. They played together, laughed together, and helped each other whenever they could. And as for the other animals, they were grateful to Benny for befriending the dragon and bringing peace to the forest. And so, in the enchanted forest, where bears and dragons roam, friendship and kindness triumphed over fear and loneliness, thanks to Benny the friendly bear.
+    </p>
+    
+      <div class="container">
+        <h1 style="color: #e4e4e4;">Questions</h1>
+        <h4 style="color: #e4e4e4;">Match the words and phrases with their definitions</h4>
+        <div class="matching-game">
+            <div class="terms">
+                <p style="color: black;" id="term1" draggable="true" ondragstart="drag(event)">Benny the bear</p>
+                <p style="color: black;" id="term2" draggable="true" ondragstart="drag(event)">Dragon</p>
+                <p style="color: black;" id="term3" draggable="true" ondragstart="drag(event)">Forest</p>
+                <p style="color: black;" id="term4" draggable="true" ondragstart="drag(event)">Playing together</p>
+                <p style="color: black;" id="term5" draggable="true" ondragstart="drag(event)">Benny's friends</p>
+                <p style="color: black;" id="term6" draggable="true" ondragstart="drag(event)">Building treehouses</p>
+            </div>
+            <div class="definitions">
+                <div class="definition" ondrop="drop(event)" ondragover="allowDrop(event)" data-term="term1">
+                    a. Big and cuddly, with brown fur as soft as chocolate
+                </div>
+                <div class="definition" ondrop="drop(event)" ondragover="allowDrop(event)" data-term="term6">
+                    b. Lonely and afraid, scaring others unintentionally
+                </div>
+                <div class="definition" ondrop="drop(event)" ondragover="allowDrop(event)" data-term="term3">
+                    c. The setting where Benny and the dragon live
+                </div>
+                <div class="definition" ondrop="drop(event)" ondragover="allowDrop(event)" data-term="term4">
+                    d. Activity that Benny invites the dragon to do with him 
+                </div>
+                <div class="definition" ondrop="drop(event)" ondragover="allowDrop(event)" data-term="term5">
+                    e. Scared of the dragon's presence in the forest
+                </div>
+                <div class="definition" ondrop="drop(event)" ondragover="allowDrop(event)" data-term="term2">
+                    f. The dragon's initial reaction to Benny's approach
+                </div>
+            </div>
+        </div>
+        <button onclick="checkAnswers()">Submit</button>
+        <a href="../index.html"> <h3>Return.</h3></a>
+        <div id="result"></div>
+    </div>
+
+    
+      <script>
+        function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.appendChild(document.getElementById(data));
+}
+
+function checkAnswers() {
+    var correct = 0;
+    var definitions = document.querySelectorAll('.definition');
+    
+    definitions.forEach(function(definition) {
+        if (definition.children.length > 0) {
+            var termId = definition.children[0].id;
+            if (termId === definition.getAttribute('data-term')) {
+                correct++;
+            }
+        }
+    });
+    
+    var result = document.getElementById('result');
+    if (correct === definitions.length) {
+        result.textContent = 'All answers are correct!';
+    } else {
+        result.textContent = correct + ' out of ' + definitions.length + ' correct.';
+    }
+}
+      </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oqo4eto.css" />
+    <title>A GOLDEN CRADLE</title>
+    <style>
+      .container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.term {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+    </style>
+  </head>
+  <body class="stories">
+    <h2 class="story-title">A GOLDEN CRADLE</h2>
+    <br />
+    <br />
+    <p>
+      Once upon a time, in a faraway village, there lived a poor couple who worked hard every day to make a living. One day, while digging in their garden, they discovered something extraordinary—a golden cradle!
+    </p>
+    <br />
+    <p>
+      Excited and amazed, they brought the golden cradle into their home. As they admired its beauty, they heard a soft cry coming from inside. To their astonishment, there was a baby nestled in the cradle, sleeping peacefully. The couple, overjoyed at their unexpected blessing, decided to raise the child as their own. They named him Altyn, which means "golden" in their language. As Altyn grew older, he became known for his kind heart and adventurous spirit. 
+    </p>
+    <br />
+    <p>
+      One day, he asked his parents about the golden cradle and where he came from. His parents, with tears in their eyes, told him the story of how they found him. Altyn, determined to uncover the truth about his identity, set out on a journey to find his true family.
+    </p>
+    <br />
+    <img id="orchid1" src="https://i.pinimg.com/originals/69/72/e4/6972e45dba574e5a695520dff9d59360.png" />
+    <p>
+      Along the way, Altyn faced many challenges and met different people who helped him on his quest. He showed kindness to everyone he encountered and always stayed true to himself. 
+    </p>
+    <br />
+    
+    <p>
+      After a long journey, Altyn finally discovered his true family and learned about his past. Despite the joy of finding his roots, Altyn realized that his true home was with the loving couple who raised him with so much love and care. Altyn returned to his adoptive parents, grateful for everything they had done for him. Together, they celebrated their bond and the love that brought them together.
+    </p>
+    
+    <p>
+      And so, Altyn lived happily ever after with his adoptive parents, cherishing the golden cradle as a symbol of their love and the family they had become. The End.
+    </p>
+    <br />
+
+    <h2>Questions</h2>
+    <h4>Before reading the text match some words with their definitions from the text. </h4>
+    <div class="container">
+      <h1>Match Words with Their Definitions</h1>
+      <form id="matchingForm">
+          <div class="term">
+              <label for="cradle">CRADLE:</label>
+              <select id="cradle" name="cradle">
+                  <option value="settle">settle or lie comfortably within or against something</option>
+                  <option value="travel">an act of travelling from one place to another</option>
+                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
+                  <option value="identity">the fact of being who or what a person or thing is</option>
+              </select>
+          </div>
+          <div class="term">
+              <label for="nestle">NESTLE:</label>
+              <select id="nestle" name="nestle">
+                  <option value="settle">settle or lie comfortably within or against something</option>
+                  <option value="travel">an act of travelling from one place to another</option>
+                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
+                  <option value="identity">the fact of being who or what a person or thing is</option>
+              </select>
+          </div>
+          <div class="term">
+              <label for="identity">IDENTITY:</label>
+              <select id="identity" name="identity">
+                  <option value="settle">settle or lie comfortably within or against something</option>
+                  <option value="travel">an act of travelling from one place to another</option>
+                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
+                  <option value="identity">the fact of being who or what a person or thing is</option>
+              </select>
+          </div>
+          <div class="term">
+              <label for="journey">JOURNEY:</label>
+              <select id="journey" name="journey">
+                  <option value="settle">settle or lie comfortably within or against something</option>
+                  <option value="travel">an act of travelling from one place to another</option>
+                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
+                  <option value="identity">the fact of being who or what a person or thing is</option>
+              </select>
+          </div>
+          <button type="button" style="background-color: #86293c;" onclick="checkAnswers()">Submit</button>
+      </form>
+      <div id="result"></div>
+  </div>
+    <a href="../index.html"> <h3>Return.</h3></a>
+    <script >
+      function checkAnswers() {
+    const form = document.getElementById('matchingForm');
+    const result = document.getElementById('result');
+    let score = 0;
+
+    const answers = {
+        cradle: 'bed',
+        nestle: 'settle',
+        identity: 'identity',
+        journey: 'travel'
+    };
+
+    for (const [term, correctAnswer] of Object.entries(answers)) {
+        const userAnswer = form.elements[term].value;
+        if (userAnswer === correctAnswer) {
+            score++;
+        }
+    }
+
+    result.textContent = `You got ${score} out of ${Object.keys(answers).length} correct.`;
+}
+    </script>
+  </body>
+</html>
