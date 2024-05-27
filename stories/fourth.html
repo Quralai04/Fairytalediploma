@@ -23,6 +23,42 @@
         line-height: 1.5;
         color: black;
       }
+      .container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.question {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
     </style>
   </head>
   <body class="stories p-img-overlay n-c-text">
@@ -51,10 +87,56 @@
         </p>
       </div>
       <h2>Questions</h2>
-      <h4>Write a small essay about the inner beauty and kindness.</h4>
+      <div class="container">
+        <h1>Beauty and the Beast Quiz</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>Who did Belle offer to take the place of as a prisoner?</p>
+                <label><input type="radio" name="q1" value="A"> A. Her friend</label><br>
+                <label><input type="radio" name="q1" value="B"> B. Her father</label><br>
+                <label><input type="radio" name="q1" value="C"> C. Her sister</label>
+            </div>
+            <div class="question">
+                <p>What did Belle discover about the Beast while staying in the castle?</p>
+                <label><input type="radio" name="q2" value="A"> A. He was very mean</label><br>
+                <label><input type="radio" name="q2" value="B"> B. He loved reading books</label><br>
+                <label><input type="radio" name="q2" value="C"> C. He hated everyone</label>
+            </div>
+            <div class="question">
+                <p>How did Belle and the Beast's relationship change over time?</p>
+                <label><input type="radio" name="q3" value="A"> A. They became enemies</label><br>
+                <label><input type="radio" name="q3" value="B"> B. They became friends</label><br>
+                <label><input type="radio" name="q3" value="C"> C. They ignored each other</label>
+            </div>
+            <button type="button" onclick="checkAnswers()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+      
 
 
     <a href="../index.html"> <h3>Return.</h3></a>
-    <script src="script.js"></script>
+    <script>
+      function checkAnswers() {
+    const form = document.getElementById('quizForm');
+    const result = document.getElementById('result');
+    let score = 0;
+
+    const answers = {
+        q1: 'B',
+        q2: 'B',
+        q3: 'B'
+    };
+
+    for (const [question, correctAnswer] of Object.entries(answers)) {
+        const userAnswer = form.elements[question].value;
+        if (userAnswer === correctAnswer) {
+            score++;
+        }
+    }
+
+    result.textContent = `You got ${score} out of ${Object.keys(answers).length} correct.`;
+}
+    </script>
   </body>
 </html>
