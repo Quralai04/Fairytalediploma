@@ -8,21 +8,15 @@
     <link rel="stylesheet" href="https://use.typekit.net/oqo4eto.css" />
     <title>A GOLDEN CRADLE</title>
     <style>
-      .container {
+.container {
     text-align: center;
     margin-top: 20px;
 }
 
-.term {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px 0;
-    text-align: left;
-    width: 80%;
-    max-width: 600px;
+input {
+    width: 100px; 
+    margin: 0 5px;
+    text-align: center;
 }
 
 button {
@@ -77,73 +71,49 @@ button:hover {
     </p>
     <br />
 
-    <h2>Questions</h2>
-    <h4>Before reading the text match some words with their definitions from the text. </h4>
+    <h2>Question</h2>
     <div class="container">
-      <h1>Match Words with Their Definitions</h1>
-      <form id="matchingForm">
-          <div class="term">
-              <label for="cradle">CRADLE:</label>
-              <select id="cradle" name="cradle">
-                  <option value="settle">settle or lie comfortably within or against something</option>
-                  <option value="travel">an act of travelling from one place to another</option>
-                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
-                  <option value="identity">the fact of being who or what a person or thing is</option>
-              </select>
-          </div>
-          <div class="term">
-              <label for="nestle">NESTLE:</label>
-              <select id="nestle" name="nestle">
-                  <option value="settle">settle or lie comfortably within or against something</option>
-                  <option value="travel">an act of travelling from one place to another</option>
-                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
-                  <option value="identity">the fact of being who or what a person or thing is</option>
-              </select>
-          </div>
-          <div class="term">
-              <label for="identity">IDENTITY:</label>
-              <select id="identity" name="identity">
-                  <option value="settle">settle or lie comfortably within or against something</option>
-                  <option value="travel">an act of travelling from one place to another</option>
-                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
-                  <option value="identity">the fact of being who or what a person or thing is</option>
-              </select>
-          </div>
-          <div class="term">
-              <label for="journey">JOURNEY:</label>
-              <select id="journey" name="journey">
-                  <option value="settle">settle or lie comfortably within or against something</option>
-                  <option value="travel">an act of travelling from one place to another</option>
-                  <option value="bed">a small bed for a baby, especially one that moves from side to side</option>
-                  <option value="identity">the fact of being who or what a person or thing is</option>
-              </select>
-          </div>
-          <button type="button" style="background-color: #86293c;" onclick="checkAnswers()">Submit</button>
+      <h1>Look through text again and fill in the gaps</h1>
+      <form id="fillInTheGapsForm">
+          <p>Once upon a time, in a <input type="text" id="gap1" class="gap" placeholder="_______"> village, there lived a poor <input type="text" id="gap2" class="gap" placeholder="_______"> 
+            who worked hard every day to make a <input type="text" id="gap3" class="gap" placeholder="_______">. One day, while 
+            <input type="text" id="gap4" class="gap" placeholder="_______"> in their garden, they discovered something extraordinary—a golden
+            <input type="text" id="gap6" class="gap" placeholder="_______"/>!</p>
+          <p>Excited and amazed, they brought the golden
+             <input type="text" id="gap8" class="gap" placeholder="_______"> into their home. As they admired its <input type="text" id="gap9" class="gap" placeholder="_______">,
+              they heard a soft <input type="text" id="gap10" class="gap" placeholder="_______"> coming from inside. To their astonishment, there was a <input type="text" id="gap11" class="gap" placeholder="_______"> 
+              nestled in the cradle, sleeping
+              <input type="text" id="gap13" class="gap" placeholder="_______">.</p>
+          <p>The couple, overjoyed at their unexpected 
+            <input type="text" id="gap15" class="gap" placeholder="_______">, decided to raise the child
+             as their own.</p>
+          <button type="button" onclick="checkAnswers()">Check Answers</button>
       </form>
       <div id="result"></div>
   </div>
+
+
+  
     <a href="../index.html"> <h3>Return.</h3></a>
-    <script >
-      function checkAnswers() {
-    const form = document.getElementById('matchingForm');
-    const result = document.getElementById('result');
-    let score = 0;
+    <script>
+function checkAnswers() {
+    const gaps = document.querySelectorAll('.gap');
+    let allFilled = true;
 
-    const answers = {
-        cradle: 'bed',
-        nestle: 'settle',
-        identity: 'identity',
-        journey: 'travel'
-    };
-
-    for (const [term, correctAnswer] of Object.entries(answers)) {
-        const userAnswer = form.elements[term].value;
-        if (userAnswer === correctAnswer) {
-            score++;
+    gaps.forEach(gap => {
+        if (!gap.value.trim()) {
+            allFilled = false;
+            gap.style.backgroundColor = '#ffcccb';
+        } else {
+            gap.style.backgroundColor = '';
         }
-    }
+    });
 
-    result.textContent = `You got ${score} out of ${Object.keys(answers).length} correct.`;
+    if (allFilled) {
+        document.getElementById('result').textContent = 'All gaps filled correctly!';
+    } else {
+        document.getElementById('result').textContent = 'Please fill in all the gaps.';
+    }
 }
     </script>
   </body>
